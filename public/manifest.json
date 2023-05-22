@@ -1,0 +1,33 @@
+{
+  "name": "Checker",
+  "description": "checklist 助手",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "./static/js/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": ["./static/js/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "notifications",
+    "tabs",
+    "alarms",
+    "activeTab",
+    "scripting"
+  ],
+  "icons": {
+    "16": "logo192.png",
+    "48": "logo192.png",
+    "128": "logo192.png"
+  }
+}
